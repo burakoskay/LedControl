@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.2.0 - 2026-07-27
+
+- Adopted the macOS Liquid Glass background treatment used by Milo, with a
+  persisted Glass-to-Solid appearance slider.
+- Made the Arduino handshake resilient to the board reset caused by opening
+  its serial port.
+- Added an Apple Development-signed DMG for the public developer preview.
+- Rebuilt the project documentation around installation, wiring, architecture, and safety.
+
 ## 0.1.0 - 2026-07-27
 
 - Initial public developer preview.

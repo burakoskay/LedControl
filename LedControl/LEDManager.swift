@@ -131,6 +131,7 @@ class LEDManager: NSObject, ObservableObject, ORSSerialPortDelegate {
     private var selectedPort: ORSSerialPort?
     private var cancellables = Set<AnyCancellable>()
     private var receiveBuffer = Data()
+    private var handshakeRetry: DispatchWorkItem?
     private var handshakeTimeout: DispatchWorkItem?
 
     // UserDefaults keys
@@ -258,8 +259,7 @@ class LEDManager: NSObject, ObservableObject, ORSSerialPortDelegate {
     }
 
     func disconnect() {
-        handshakeTimeout?.cancel()
-        handshakeTimeout = nil
+        cancelHandshake()
         receiveBuffer.removeAll(keepingCapacity: false)
         selectedPort?.close()
         selectedPort?.delegate = nil
@@ -393,22 +393,47 @@ class LEDManager: NSObject, ObservableObject, ORSSerialPortDelegate {
         port.send(Data("\(command)\n".utf8))
     }
 
+    private func cancelHandshake() {
+        handshakeRetry?.cancel()
+        handshakeRetry = nil
+        handshakeTimeout?.cancel()
+        handshakeTimeout = nil
+    }
+
+    private func scheduleHandshakeAttempt(on port: ORSSerialPort, after delay: TimeInterval) {
+        let retry = DispatchWorkItem { [weak self, weak port] in
+            guard let self,
+                  let port,
+                  self.selectedPort === port,
+                  port.isOpen,
+                  !self.isConnected else { return }
+            self.sendRawCommand(LEDProtocolCodec.handshakeRequest, through: port)
+            self.scheduleHandshakeAttempt(on: port, after: 0.75)
+        }
+        handshakeRetry = retry
+        DispatchQueue.main.asyncAfter(deadline: .now() + delay, execute: retry)
+    }
+
     // MARK: - ORSSerialPortDelegate
 
     func serialPortWasOpened(_ serialPort: ORSSerialPort) {
         DispatchQueue.main.async { [weak self, weak serialPort] in
             guard let self, let serialPort else { return }
             self.connectionMessage = "Verifying \(serialPort.name)…"
-            self.sendRawCommand(LEDProtocolCodec.handshakeRequest, through: serialPort)
+            self.cancelHandshake()
+            // Opening an Arduino serial port toggles DTR and resets the board. Retry long enough
+            // for the bootloader and firmware setup to finish instead of losing one early HELLO.
+            self.scheduleHandshakeAttempt(on: serialPort, after: 0.25)
 
             let timeout = DispatchWorkItem { [weak self, weak serialPort] in
                 guard let self, let serialPort, !self.isConnected else { return }
+                self.cancelHandshake()
                 self.lastError = "No compatible LED controller responded on \(serialPort.name)."
                 self.connectionMessage = "Incompatible Device"
                 serialPort.close()
             }
             self.handshakeTimeout = timeout
-            DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: timeout)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 6, execute: timeout)
         }
     }
 
@@ -433,8 +458,7 @@ class LEDManager: NSObject, ObservableObject, ORSSerialPortDelegate {
             }
             let line = decodedLine.trimmingCharacters(in: .whitespacesAndNewlines)
             if line == LEDProtocolCodec.handshakeResponse {
-                handshakeTimeout?.cancel()
-                handshakeTimeout = nil
+                cancelHandshake()
                 isConnected = true
                 connectedPortName = serialPort.name
                 connectionMessage = serialPort.name

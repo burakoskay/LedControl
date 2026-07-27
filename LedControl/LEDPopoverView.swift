@@ -4,40 +4,48 @@ import SwiftUI
 
 struct LEDPopoverView: View {
     @ObservedObject var manager: LEDManager
+    let onPreferredHeightChange: (CGFloat) -> Void
     @State private var showPortPicker = false
     @State private var hoveringEffect: LEDMode?
     @State private var hoveringPreset: UUID?
     @State private var editingPresets = false
     @State private var launchAtLogin = LoginItemHelper.isEnabled()
     @State private var loginItemError: String?
+    @State private var isColorExpanded = true
+    @State private var isEffectsExpanded = true
+    @State private var isPresetsExpanded = true
+    @State private var isSettingsExpanded = true
 
     var body: some View {
         VStack(spacing: 0) {
             connectionHeader
+                .reportPanelContentHeight()
             Divider()
 
             ScrollView {
-                VStack(spacing: 16) {
+                VStack(spacing: 0) {
                     powerAndPreview
                         .padding(.top, 12)
-                    colorPickerSection
-                    brightnessSection
+                        .padding(.bottom, 12)
+                    colorSection
                     Divider().padding(.horizontal)
                     effectsSection
-                    if manager.isOn && LEDMode.effects.contains(manager.currentMode) {
-                        speedSection
-                    }
                     Divider().padding(.horizontal)
                     presetsSection
                 }
-                .padding(.bottom, 12)
+                .reportPanelContentHeight()
             }
 
             Divider()
             footerSection
+                .reportPanelContentHeight()
         }
         .frame(width: 300)
-        .background(.ultraThinMaterial)
+        .background {
+            AdjustableGlassBackground()
+                .ignoresSafeArea()
+        }
+        .onPanelContentHeightChange(onPreferredHeightChange)
     }
 
     // MARK: - Connection Header
@@ -121,7 +129,7 @@ struct LEDPopoverView: View {
                     .frame(width: 44, height: 44)
                     .background(
                         Circle()
-                            .fill(manager.isOn ? Color.accentColor : Color.gray.opacity(0.15))
+                            .fill(manager.isOn ? Color.red : Color.gray.opacity(0.15))
                     )
             }
             .buttonStyle(.plain)
@@ -129,9 +137,9 @@ struct LEDPopoverView: View {
         .padding(.horizontal, 16)
     }
 
-    // MARK: - Color Picker (uses CGColor binding for deterministic RGB)
+    // MARK: - Color
 
-    private var colorPickerSection: some View {
+    private var colorSection: some View {
         let colorBinding = Binding<CGColor>(
             get: { manager.cgColor },
             set: { newValue in
@@ -145,15 +153,12 @@ struct LEDPopoverView: View {
             }
         )
 
-        return HStack {
-            Text("Color")
-                .font(.system(size: 13, weight: .medium))
-                .foregroundStyle(.secondary)
-            Spacer()
+        return CollapsibleSection(title: "Color", isExpanded: $isColorExpanded) {
             ColorPicker("", selection: colorBinding, supportsOpacity: false)
                 .labelsHidden()
+        } content: {
+            brightnessSection
         }
-        .padding(.horizontal, 16)
     }
 
     // MARK: - Brightness Slider
@@ -184,18 +189,17 @@ struct LEDPopoverView: View {
     // MARK: - Effects Grid
 
     private var effectsSection: some View {
-        VStack(alignment: .leading, spacing: 10) {
-            Text("Effects")
-                .font(.system(size: 13, weight: .medium))
-                .foregroundStyle(.secondary)
-                .padding(.horizontal, 16)
-
+        CollapsibleSection(title: "Effects", isExpanded: $isEffectsExpanded) {
             LazyVGrid(columns: Array(repeating: GridItem(.flexible(), spacing: 8), count: 3), spacing: 8) {
                 ForEach(LEDMode.effects) { mode in
                     effectButton(mode)
                 }
             }
             .padding(.horizontal, 16)
+
+            if manager.isOn && LEDMode.effects.contains(manager.currentMode) {
+                speedSection
+            }
         }
     }
 
@@ -265,31 +269,23 @@ struct LEDPopoverView: View {
             }
         }
         .padding(.horizontal, 16)
-        .transition(.opacity.combined(with: .move(edge: .top)))
     }
 
     // MARK: - Presets
 
     private var presetsSection: some View {
-        VStack(alignment: .leading, spacing: 10) {
-            HStack {
-                Text("Presets")
-                    .font(.system(size: 13, weight: .medium))
-                    .foregroundStyle(.secondary)
-                Spacer()
-                if manager.presets.count > PresetColor.defaults.count {
-                    Button {
-                        withAnimation { editingPresets.toggle() }
-                    } label: {
-                        Text(editingPresets ? "Done" : "Edit")
-                            .font(.system(size: 11, weight: .medium))
-                            .foregroundStyle(.secondary)
-                    }
-                    .buttonStyle(.plain)
+        CollapsibleSection(title: "Presets", isExpanded: $isPresetsExpanded) {
+            if manager.presets.count > PresetColor.defaults.count {
+                Button {
+                    withAnimation { editingPresets.toggle() }
+                } label: {
+                    Text(editingPresets ? "Done" : "Edit")
+                        .font(.system(size: 11, weight: .medium))
+                        .foregroundStyle(.secondary)
                 }
+                .buttonStyle(.plain)
             }
-            .padding(.horizontal, 16)
-
+        } content: {
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack(spacing: 10) {
                     ForEach(manager.presets) { preset in
@@ -363,65 +359,39 @@ struct LEDPopoverView: View {
 
     private var footerSection: some View {
         VStack(spacing: 0) {
-            Button {
-                showPortPicker.toggle()
-            } label: {
-                HStack {
-                    Image(systemName: "cable.connector")
-                        .font(.system(size: 12))
-                    Text("Serial Ports")
-                        .font(.system(size: 13))
-                    Spacer()
-                    Image(systemName: "chevron.right")
-                        .font(.system(size: 10, weight: .semibold))
-                        .foregroundStyle(.tertiary)
-                }
-                .contentShape(Rectangle())
-                .padding(.horizontal, 16)
-                .padding(.vertical, 8)
-            }
-            .buttonStyle(.plain)
-            .popover(isPresented: $showPortPicker, arrowEdge: .trailing) {
-                portPickerPopover
-            }
-
-            if #available(macOS 13.0, *) {
-                Button {
-                    do {
-                        try LoginItemHelper.setEnabled(!launchAtLogin)
-                        launchAtLogin = LoginItemHelper.isEnabled()
-                        loginItemError = nil
-                    } catch {
-                        loginItemError = "Could not update Open at Login: \(error.localizedDescription)"
-                    }
-                } label: {
-                    HStack {
-                        Image(systemName: "arrow.right.circle")
-                            .font(.system(size: 12))
-                        Text("Open at Login")
-                            .font(.system(size: 13))
-                        Spacer()
-                        if launchAtLogin {
-                            Image(systemName: "checkmark")
-                                .font(.system(size: 11, weight: .semibold))
-                                .foregroundStyle(Color.accentColor)
+            CollapsibleSection(title: "Settings", isExpanded: $isSettingsExpanded) {
+                VStack(spacing: 0) {
+                    Button {
+                        showPortPicker.toggle()
+                    } label: {
+                        HStack {
+                            Image(systemName: "cable.connector")
+                                .font(.system(size: 12))
+                            Text("Serial Ports")
+                                .font(.system(size: 13))
+                            Spacer()
+                            Image(systemName: "chevron.right")
+                                .font(.system(size: 10, weight: .semibold))
+                                .foregroundStyle(.tertiary)
                         }
-                    }
-                    .contentShape(Rectangle())
-                    .padding(.horizontal, 16)
-                    .padding(.vertical, 8)
-                }
-                .buttonStyle(.plain)
-                if let loginItemError {
-                    Text(loginItemError)
-                        .font(.system(size: 10))
-                        .foregroundStyle(.red)
+                        .contentShape(Rectangle())
                         .padding(.horizontal, 16)
-                        .padding(.bottom, 4)
+                        .padding(.vertical, 8)
+                    }
+                    .buttonStyle(.plain)
+                    .popover(isPresented: $showPortPicker, arrowEdge: .trailing) {
+                        portPickerPopover
+                    }
+
+                    LoginItemControl(
+                        launchAtLogin: $launchAtLogin,
+                        errorMessage: $loginItemError
+                    )
+                    BackgroundAppearanceSlider()
                 }
             }
 
-            Divider().padding(.horizontal, 8)
+            Divider().padding(.horizontal, 16)
 
             Button {
                 manager.disconnect()
@@ -444,7 +414,6 @@ struct LEDPopoverView: View {
             .buttonStyle(.plain)
             .keyboardShortcut("q", modifiers: .command)
         }
-        .padding(.vertical, 4)
     }
 
     // MARK: - Port Picker Popover
@@ -465,8 +434,7 @@ struct LEDPopoverView: View {
                     .padding(.vertical, 8)
             } else {
                 ForEach(Array(manager.availablePorts.enumerated()), id: \.offset) { _, port in
-                    let portName = port.name
-                    let portPath = port.path
+                    let (portName, portPath) = (port.name, port.path)
                     Button {
                         manager.connect(to: port)
                         showPortPicker = false
