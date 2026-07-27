@@ -1,0 +1,4 @@
+module ORSSerial {
+    umbrella header "ORSSerial/ORSSerial.h"
+    export *
+}

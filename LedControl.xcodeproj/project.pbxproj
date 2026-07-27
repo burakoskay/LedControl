@@ -1,0 +1,664 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXContainerItemProxy section */
+		ACFD50E42DE3BEA10009DFB3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ACFD50CD2DE3BEA00009DFB3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ACFD50D42DE3BEA00009DFB3;
+			remoteInfo = LedControl;
+		};
+		ACFD50EE2DE3BEA10009DFB3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ACFD50CD2DE3BEA00009DFB3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ACFD50D42DE3BEA00009DFB3;
+			remoteInfo = LedControl;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXBuildFile section */
+		ACFD51282DE3CAF70009DFB3 /* ORSSerialBuffer.m in Sources */ = {isa = PBXBuildFile; fileRef = ACFD51222DE3CAF70009DFB3 /* ORSSerialBuffer.m */; };
+		ACFD51292DE3CAF70009DFB3 /* ORSSerialPacketDescriptor.m in Sources */ = {isa = PBXBuildFile; fileRef = ACFD51232DE3CAF70009DFB3 /* ORSSerialPacketDescriptor.m */; };
+		ACFD512A2DE3CAF70009DFB3 /* ORSSerialPort.m in Sources */ = {isa = PBXBuildFile; fileRef = ACFD51242DE3CAF70009DFB3 /* ORSSerialPort.m */; };
+		ACFD512B2DE3CAF70009DFB3 /* ORSSerialPortManager.m in Sources */ = {isa = PBXBuildFile; fileRef = ACFD51252DE3CAF70009DFB3 /* ORSSerialPortManager.m */; };
+		ACFD512C2DE3CAF70009DFB3 /* ORSSerialRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = ACFD51262DE3CAF70009DFB3 /* ORSSerialRequest.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		ACFD50D52DE3BEA00009DFB3 /* LedControl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LedControl.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		ACFD50E32DE3BEA10009DFB3 /* LedControlTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LedControlTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		ACFD50ED2DE3BEA10009DFB3 /* LedControlUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LedControlUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		ACFD51182DE3CAF70009DFB3 /* ORSSerial.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ORSSerial.h; sourceTree = "<group>"; };
+		ACFD51192DE3CAF70009DFB3 /* ORSSerialPacketDescriptor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ORSSerialPacketDescriptor.h; sourceTree = "<group>"; };
+		ACFD511A2DE3CAF70009DFB3 /* ORSSerialPort.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ORSSerialPort.h; sourceTree = "<group>"; };
+		ACFD511B2DE3CAF70009DFB3 /* ORSSerialPortManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ORSSerialPortManager.h; sourceTree = "<group>"; };
+		ACFD511C2DE3CAF70009DFB3 /* ORSSerialRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ORSSerialRequest.h; sourceTree = "<group>"; };
+		ACFD511F2DE3CAF70009DFB3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ACFD51212DE3CAF70009DFB3 /* ORSSerialBuffer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ORSSerialBuffer.h; sourceTree = "<group>"; };
+		ACFD51222DE3CAF70009DFB3 /* ORSSerialBuffer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ORSSerialBuffer.m; sourceTree = "<group>"; };
+		ACFD51232DE3CAF70009DFB3 /* ORSSerialPacketDescriptor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ORSSerialPacketDescriptor.m; sourceTree = "<group>"; };
+		ACFD51242DE3CAF70009DFB3 /* ORSSerialPort.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ORSSerialPort.m; sourceTree = "<group>"; };
+		ACFD51252DE3CAF70009DFB3 /* ORSSerialPortManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ORSSerialPortManager.m; sourceTree = "<group>"; };
+		ACFD51262DE3CAF70009DFB3 /* ORSSerialRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ORSSerialRequest.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		ACFD50D72DE3BEA00009DFB3 /* LedControl */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = LedControl;
+			sourceTree = "<group>";
+		};
+		ACFD50E62DE3BEA10009DFB3 /* LedControlTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = LedControlTests;
+			sourceTree = "<group>";
+		};
+		ACFD50F02DE3BEA10009DFB3 /* LedControlUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = LedControlUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		ACFD50D22DE3BEA00009DFB3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ACFD50E02DE3BEA10009DFB3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ACFD50EA2DE3BEA10009DFB3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		ACFD50CC2DE3BEA00009DFB3 = {
+			isa = PBXGroup;
+			children = (
+				ACFD50D72DE3BEA00009DFB3 /* LedControl */,
+				ACFD50E62DE3BEA10009DFB3 /* LedControlTests */,
+				ACFD50F02DE3BEA10009DFB3 /* LedControlUITests */,
+				ACFD51172DE3CAF70009DFB3 /* Frameworks */,
+				ACFD50D62DE3BEA00009DFB3 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		ACFD50D62DE3BEA00009DFB3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				ACFD50D52DE3BEA00009DFB3 /* LedControl.app */,
+				ACFD50E32DE3BEA10009DFB3 /* LedControlTests.xctest */,
+				ACFD50ED2DE3BEA10009DFB3 /* LedControlUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		ACFD51172DE3CAF70009DFB3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				ACFD51272DE3CAF70009DFB3 /* Sources */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		ACFD511D2DE3CAF70009DFB3 /* ORSSerial */ = {
+			isa = PBXGroup;
+			children = (
+				ACFD51182DE3CAF70009DFB3 /* ORSSerial.h */,
+				ACFD51192DE3CAF70009DFB3 /* ORSSerialPacketDescriptor.h */,
+				ACFD511A2DE3CAF70009DFB3 /* ORSSerialPort.h */,
+				ACFD511B2DE3CAF70009DFB3 /* ORSSerialPortManager.h */,
+				ACFD511C2DE3CAF70009DFB3 /* ORSSerialRequest.h */,
+			);
+			path = ORSSerial;
+			sourceTree = "<group>";
+		};
+		ACFD511E2DE3CAF70009DFB3 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				ACFD511D2DE3CAF70009DFB3 /* ORSSerial */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		ACFD51202DE3CAF70009DFB3 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				ACFD511F2DE3CAF70009DFB3 /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		ACFD51272DE3CAF70009DFB3 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				ACFD511E2DE3CAF70009DFB3 /* include */,
+				ACFD51202DE3CAF70009DFB3 /* Resources */,
+				ACFD51212DE3CAF70009DFB3 /* ORSSerialBuffer.h */,
+				ACFD51222DE3CAF70009DFB3 /* ORSSerialBuffer.m */,
+				ACFD51232DE3CAF70009DFB3 /* ORSSerialPacketDescriptor.m */,
+				ACFD51242DE3CAF70009DFB3 /* ORSSerialPort.m */,
+				ACFD51252DE3CAF70009DFB3 /* ORSSerialPortManager.m */,
+				ACFD51262DE3CAF70009DFB3 /* ORSSerialRequest.m */,
+			);
+			name = Sources;
+			path = ORSSerialPort/Sources;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		ACFD50D42DE3BEA00009DFB3 /* LedControl */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ACFD50F72DE3BEA10009DFB3 /* Build configuration list for PBXNativeTarget "LedControl" */;
+			buildPhases = (
+				ACFD50D12DE3BEA00009DFB3 /* Sources */,
+				ACFD50D22DE3BEA00009DFB3 /* Frameworks */,
+				ACFD50D32DE3BEA00009DFB3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				ACFD50D72DE3BEA00009DFB3 /* LedControl */,
+			);
+			name = LedControl;
+			packageProductDependencies = (
+			);
+			productName = LedControl;
+			productReference = ACFD50D52DE3BEA00009DFB3 /* LedControl.app */;
+			productType = "com.apple.product-type.application";
+		};
+		ACFD50E22DE3BEA10009DFB3 /* LedControlTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ACFD50FA2DE3BEA10009DFB3 /* Build configuration list for PBXNativeTarget "LedControlTests" */;
+			buildPhases = (
+				ACFD50DF2DE3BEA10009DFB3 /* Sources */,
+				ACFD50E02DE3BEA10009DFB3 /* Frameworks */,
+				ACFD50E12DE3BEA10009DFB3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				ACFD50E52DE3BEA10009DFB3 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				ACFD50E62DE3BEA10009DFB3 /* LedControlTests */,
+			);
+			name = LedControlTests;
+			packageProductDependencies = (
+			);
+			productName = LedControlTests;
+			productReference = ACFD50E32DE3BEA10009DFB3 /* LedControlTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		ACFD50EC2DE3BEA10009DFB3 /* LedControlUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ACFD50FD2DE3BEA10009DFB3 /* Build configuration list for PBXNativeTarget "LedControlUITests" */;
+			buildPhases = (
+				ACFD50E92DE3BEA10009DFB3 /* Sources */,
+				ACFD50EA2DE3BEA10009DFB3 /* Frameworks */,
+				ACFD50EB2DE3BEA10009DFB3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				ACFD50EF2DE3BEA10009DFB3 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				ACFD50F02DE3BEA10009DFB3 /* LedControlUITests */,
+			);
+			name = LedControlUITests;
+			packageProductDependencies = (
+			);
+			productName = LedControlUITests;
+			productReference = ACFD50ED2DE3BEA10009DFB3 /* LedControlUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		ACFD50CD2DE3BEA00009DFB3 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1630;
+				LastUpgradeCheck = 2600;
+				TargetAttributes = {
+					ACFD50D42DE3BEA00009DFB3 = {
+						CreatedOnToolsVersion = 16.3;
+						LastSwiftMigration = 1630;
+					};
+					ACFD50E22DE3BEA10009DFB3 = {
+						CreatedOnToolsVersion = 16.3;
+						TestTargetID = ACFD50D42DE3BEA00009DFB3;
+					};
+					ACFD50EC2DE3BEA10009DFB3 = {
+						CreatedOnToolsVersion = 16.3;
+						TestTargetID = ACFD50D42DE3BEA00009DFB3;
+					};
+				};
+			};
+			buildConfigurationList = ACFD50D02DE3BEA00009DFB3 /* Build configuration list for PBXProject "LedControl" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = ACFD50CC2DE3BEA00009DFB3;
+			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+			);
+			preferredProjectObjectVersion = 77;
+			productRefGroup = ACFD50D62DE3BEA00009DFB3 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				ACFD50D42DE3BEA00009DFB3 /* LedControl */,
+				ACFD50E22DE3BEA10009DFB3 /* LedControlTests */,
+				ACFD50EC2DE3BEA10009DFB3 /* LedControlUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		ACFD50D32DE3BEA00009DFB3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ACFD50E12DE3BEA10009DFB3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ACFD50EB2DE3BEA10009DFB3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		ACFD50D12DE3BEA00009DFB3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ACFD51282DE3CAF70009DFB3 /* ORSSerialBuffer.m in Sources */,
+				ACFD51292DE3CAF70009DFB3 /* ORSSerialPacketDescriptor.m in Sources */,
+				ACFD512A2DE3CAF70009DFB3 /* ORSSerialPort.m in Sources */,
+				ACFD512B2DE3CAF70009DFB3 /* ORSSerialPortManager.m in Sources */,
+				ACFD512C2DE3CAF70009DFB3 /* ORSSerialRequest.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ACFD50DF2DE3BEA10009DFB3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ACFD50E92DE3BEA10009DFB3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		ACFD50E52DE3BEA10009DFB3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ACFD50D42DE3BEA00009DFB3 /* LedControl */;
+			targetProxy = ACFD50E42DE3BEA10009DFB3 /* PBXContainerItemProxy */;
+		};
+		ACFD50EF2DE3BEA10009DFB3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ACFD50D42DE3BEA00009DFB3 /* LedControl */;
+			targetProxy = ACFD50EE2DE3BEA10009DFB3 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		ACFD50F52DE3BEA10009DFB3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		ACFD50F62DE3BEA10009DFB3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEAD_CODE_STRIPPING = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_CODE_COVERAGE = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		ACFD50F82DE3BEA10009DFB3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = LedControl/LedControl.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
+				DEVELOPMENT_TEAM = WHCQKG5XCZ;
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_CODE_COVERAGE = NO;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SELECTED_FILES = readonly;
+				GENERATE_INFOPLIST_FILE = YES;
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/ORSSerialPort/Sources/include";
+				INFOPLIST_KEY_CFBundleDisplayName = "LED Control";
+				INFOPLIST_KEY_LSUIElement = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2026 Burak Oskay";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 0.1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.burakoskay.LedControl;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				REGISTER_APP_GROUPS = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "LedControl/LedControl-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		ACFD50F92DE3BEA10009DFB3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = LedControl/LedControl.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
+				DEVELOPMENT_TEAM = WHCQKG5XCZ;
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_CODE_COVERAGE = NO;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SELECTED_FILES = readonly;
+				GENERATE_INFOPLIST_FILE = YES;
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/ORSSerialPort/Sources/include";
+				INFOPLIST_KEY_CFBundleDisplayName = "LED Control";
+				INFOPLIST_KEY_LSUIElement = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2026 Burak Oskay";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 0.1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.burakoskay.LedControl;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				REGISTER_APP_GROUPS = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "LedControl/LedControl-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		ACFD50FB2DE3BEA10009DFB3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 0.1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.burakoskay.LedControlTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LedControl.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/LedControl";
+			};
+			name = Debug;
+		};
+		ACFD50FC2DE3BEA10009DFB3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 0.1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.burakoskay.LedControlTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LedControl.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/LedControl";
+			};
+			name = Release;
+		};
+		ACFD50FE2DE3BEA10009DFB3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 0.1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.burakoskay.LedControlUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = LedControl;
+			};
+			name = Debug;
+		};
+		ACFD50FF2DE3BEA10009DFB3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 0.1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.burakoskay.LedControlUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = LedControl;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		ACFD50D02DE3BEA00009DFB3 /* Build configuration list for PBXProject "LedControl" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ACFD50F52DE3BEA10009DFB3 /* Debug */,
+				ACFD50F62DE3BEA10009DFB3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ACFD50F72DE3BEA10009DFB3 /* Build configuration list for PBXNativeTarget "LedControl" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ACFD50F82DE3BEA10009DFB3 /* Debug */,
+				ACFD50F92DE3BEA10009DFB3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ACFD50FA2DE3BEA10009DFB3 /* Build configuration list for PBXNativeTarget "LedControlTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ACFD50FB2DE3BEA10009DFB3 /* Debug */,
+				ACFD50FC2DE3BEA10009DFB3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ACFD50FD2DE3BEA10009DFB3 /* Build configuration list for PBXNativeTarget "LedControlUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ACFD50FE2DE3BEA10009DFB3 /* Debug */,
+				ACFD50FF2DE3BEA10009DFB3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = ACFD50CD2DE3BEA00009DFB3 /* Project object */;
+}

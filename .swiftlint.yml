@@ -1,0 +1,21 @@
+included:
+  - LedControl
+  - LedControlTests
+
+excluded:
+  - ORSSerialPort
+
+file_length:
+  warning: 550
+  error: 700
+
+type_body_length:
+  warning: 450
+  error: 550
+
+line_length:
+  warning: 140
+  error: 180
+
+identifier_name:
+  min_length: 2

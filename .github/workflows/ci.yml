@@ -1,0 +1,24 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  macos:
+    runs-on: macos-15
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install tools
+        run: brew install swiftlint arduino-cli
+      - name: Install Arduino dependencies
+        run: |
+          arduino-cli core update-index
+          arduino-cli core install arduino:avr@1.8.7
+          arduino-cli lib install FastLED@3.10.3
+      - name: Verify app and firmware
+        run: Tools/verify.sh
