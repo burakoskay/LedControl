@@ -23,7 +23,7 @@ an Arduino handles timing-critical LED rendering over a versioned USB serial pro
 <br>
 
 > [!IMPORTANT]
-> This is a **Development Preview**. The DMG is signed with an Apple Development certificate,
+> This is a **Public Preview**. The DMG is signed with an Apple Development certificate,
 > but it is not notarized. macOS will warn on first launch; see [Installing](#installing).
 > LED Control has no accounts, analytics, subscriptions, or network dependency.
 
@@ -55,7 +55,7 @@ appearance control.
 
 ## Installing
 
-1. Download the DMG from the [v0.2.0 Development Preview](https://github.com/burakoskay/LedControl/releases/tag/v0.2.0-dev.1).
+1. Download the DMG from the [v0.2.0 Public Preview](https://github.com/burakoskay/LedControl/releases/tag/v0.2.0-dev.1).
 2. Drag `LED Control.app` to `/Applications`.
 3. **First launch may be blocked.** Right-click the app → **Open** → **Open**, or allow it under
    **System Settings → Privacy & Security**. This is expected for the non-notarized preview.
@@ -226,7 +226,7 @@ Tools/verify.sh
 `Tools/verify.sh` runs strict SwiftLint, builds the Release app, executes the protocol tests, and
 compiles the Arduino firmware when `arduino-cli` is installed.
 
-To create the signed arm64 Development Preview DMG:
+To create the signed arm64 Public Preview DMG:
 
 ```bash
 Tools/build-development-preview.sh
