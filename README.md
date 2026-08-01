@@ -7,7 +7,7 @@
 Control color, brightness, presets, and animated effects from a compact Liquid Glass panel while
 an Arduino handles timing-critical LED rendering over a versioned USB serial protocol.
 
-[![Download](https://img.shields.io/badge/Download-Development%20Preview-ff3b30?style=for-the-badge)](https://github.com/burakoskay/LedControl/releases/tag/v0.2.0-dev.1)
+[![Download](https://img.shields.io/badge/Download-Public%20Preview-ff3b30?style=for-the-badge)](https://github.com/burakoskay/LedControl/releases/tag/v0.2.0-dev.1)
 [![Platform](https://img.shields.io/badge/macOS-13.0%2B-lightgrey?style=for-the-badge)](#building-from-source)
 [![Swift](https://img.shields.io/badge/Swift-5-orange?style=for-the-badge)](#building-from-source)
 [![License](https://img.shields.io/badge/License-MIT-34c759?style=for-the-badge)](LICENSE)
